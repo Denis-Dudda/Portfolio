@@ -1,0 +1,26 @@
+@import '../../styles.scss';
+
+section{
+  display: flex;
+}
+div{
+  background-color: rgb(12, 11, 11);
+  width: 32px;
+  height: 100vh;
+}
+nav{
+  width: 100px;
+  height: 100vh;
+  background-color: rgb(181,233,59);
+  @include dFlex($g:32px);
+  writing-mode: vertical-rl;
+  direction: rtl;
+  box-shadow: 21px 2px 17px 9px rgba(0,0,0,0.94);
+
+  >a{
+    text-decoration: none;
+    transform: rotate(180deg);
+    font-size: 50px;
+    color: rgb(74,74,74);
+  }
+}
