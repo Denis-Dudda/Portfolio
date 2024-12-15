@@ -3,11 +3,6 @@
 section{
   display: flex;
 }
-div{
-  
-  width: 32px;
-  height: 100vh;
-}
 nav{
   width: 172px;
   height: 100vh;
@@ -16,7 +11,7 @@ nav{
   writing-mode: vertical-rl;
   direction: rtl;
   box-shadow: 21px 2px 17px 9px rgba(0,0,0,0.94);
-
+  position: fixed;
   >a{
     text-decoration: none;
     transform: rotate(180deg);
