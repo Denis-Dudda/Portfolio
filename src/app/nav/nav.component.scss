@@ -4,12 +4,12 @@ section{
   display: flex;
 }
 div{
-  background-color: rgb(12, 11, 11);
+  
   width: 32px;
   height: 100vh;
 }
 nav{
-  width: 100px;
+  width: 172px;
   height: 100vh;
   background-color: rgb(181,233,59);
   @include dFlex($g:32px);
@@ -22,5 +22,8 @@ nav{
     transform: rotate(180deg);
     font-size: 50px;
     color: rgb(74,74,74);
+    &:hover{
+      color: white;
+    }
   }
 }

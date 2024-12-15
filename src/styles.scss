@@ -2,6 +2,8 @@ body{
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  background: linear-gradient(88.66deg, #000000 11.41%, #2C2B2B 22.29%, #0B0A0A 37.32%, #323232 58.54%, #0B0A0A 70.03%);
+
 }
 
 @mixin dFlex($jc:center,$ai:center,$g:0px){
