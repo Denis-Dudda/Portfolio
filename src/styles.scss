@@ -8,6 +8,7 @@
 
 html{
   min-width: min-content;
+
 }
 
 body{
@@ -21,6 +22,8 @@ body{
   background-size: cover;
   font-family: 'Quantico';
   overflow-y: hidden;
+  overflow-x: scroll; /* Ermöglicht horizontales Scrollen */
+  overflow-y: hidden; /* Verhindert vertikales Scrollen */
 }
 
 .contant-wrapper{
