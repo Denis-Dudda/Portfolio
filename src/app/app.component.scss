@@ -6,3 +6,9 @@ app-why-me{
   width: 100vw;
   height: 100vh;
 }
+
+app-my-skill-set{
+  @include dFlex();
+  width: 100vw;
+  height: 100vh;
+}

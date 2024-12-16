@@ -5,6 +5,7 @@ import { HeroComponent } from './hero/hero.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { SocialIconsComponent } from './shared/social-icons/social-icons.component';
 import { WhyMeComponent } from './why-me/why-me.component';
+import { MySkillSetComponent } from './my-skill-set/my-skill-set.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import { WhyMeComponent } from './why-me/why-me.component';
     HeroComponent,
     NavComponent,
     SocialIconsComponent,
-    WhyMeComponent],
+    WhyMeComponent,
+    MySkillSetComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
