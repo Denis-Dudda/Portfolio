@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 
+
+
 @Component({
   selector: 'app-my-skill-set',
   standalone: true,
@@ -11,5 +13,17 @@ import { Component } from '@angular/core';
 })
 export class MySkillSetComponent {
 
-
+  icons = [
+    { src: 'assets/icons/Property 1.svg', label: 'Icon 1' },
+    { src: 'assets/icons/Property 2.svg', label: 'Icon 2' },
+    { src: 'assets/icons/Property 3.svg', label: 'Icon 3' },
+    { src: 'assets/icons/Property 4.svg', label: 'Icon 4' },
+    { src: 'assets/icons/Property 5.svg', label: 'Icon 5' },
+    { src: 'assets/icons/Property 6.svg', label: 'Icon 6' },
+    { src: 'assets/icons/Property 7.svg', label: 'Icon 7' },
+    { src: 'assets/icons/Property 8.svg', label: 'Icon 8' },
+    { src: 'assets/icons/Property 9.svg', label: 'Icon 9' },
+    { src: 'assets/icons/Property 10.svg', label: 'Icon 10' },
+    { src: 'assets/icons/Property 11.svg', label: 'Icon 11' }
+  ];
 }
