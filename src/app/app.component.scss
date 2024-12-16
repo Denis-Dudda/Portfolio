@@ -1,9 +1,8 @@
 @import '../styles.scss';
 
 app-why-me{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include dFlex();
+  
   width: 100vw;
   height: 100vh;
 }

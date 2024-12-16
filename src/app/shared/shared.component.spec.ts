@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SharedComponent } from './shared.component';
 
 describe('SharedComponent', () => {
