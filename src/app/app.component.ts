@@ -26,22 +26,61 @@ import { MyWorkComponent } from './my-work/my-work.component';
 })
 export class AppComponent implements AfterViewInit {
   title = 'portfolio';
-
+  
   ngAfterViewInit(): void {
     if (typeof window !== 'undefined') {
-      // Event Listener für das horizontale Scrollen mit passive: false hinzufügen
+      // Horizontales Scrollen mit Mausrad
       window.addEventListener('wheel', (event: WheelEvent) => {
-        event.preventDefault(); // Verhindert das Standard-Scroll-Verhalten (vertikal)
-  
-        // Horizontales Scrollen basierend auf der Delta-Werte des Mausrads
+        event.preventDefault();
+
         window.scrollBy({
-          left: event.deltaY < 0 ? -500 : 500, // Scrollt nach links oder rechts, je nach Richtung des Mausrads
-          behavior: 'smooth', // Sanftes Scrollen
+          left: event.deltaY < 0 ? -500 : 500,
+          behavior: 'smooth'
         });
-      }, { passive: false }); // passive auf false setzen wegen neuem Browserschutz
+      }, { passive: false });
+
+      // Maus-Ziehen für horizontales Scrollen
+      let isMouseDown = false;
+      let startX: number;
+      let scrollLeft: number;
+
+      const onMouseDown = (e: MouseEvent) => {
+        isMouseDown = true;
+        startX = e.pageX;
+        scrollLeft = window.scrollX;
+
+        document.body.style.cursor = 'grabbing';
+        document.body.style.userSelect = 'none'; // Verhindert Text-Markierung
+      };
+
+      const onMouseMove = (e: MouseEvent) => {
+        const speedFactor = 1.0; // Faktor für die Zieh-Geschwindigkeit
+        if (!isMouseDown) return;
+        const x = e.pageX; // Aktuelle Mausposition
+        const walk = (startX - x) * speedFactor; // Geschwindigkeit erhöhen/verringern
+        window.scrollTo({
+          left: scrollLeft + walk,
+          behavior: 'auto'
+        });
+      };
+
+      const onMouseUp = () => {
+        isMouseDown = false;
+
+        document.body.style.cursor = 'default';
+        document.body.style.userSelect = ''; // Text-Markierung wieder aktivieren
+      };
+
+      // Event Listener hinzufügen
+      window.addEventListener('mousedown', onMouseDown);
+      window.addEventListener('mousemove', onMouseMove);
+      window.addEventListener('mouseup', onMouseUp);
+      window.addEventListener('mouseleave', onMouseUp);
     }
   }
 }
+
+
 
 
 
