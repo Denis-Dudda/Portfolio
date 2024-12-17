@@ -26,7 +26,7 @@ import { MyWorkComponent } from './my-work/my-work.component';
 })
 export class AppComponent implements AfterViewInit {
   title = 'portfolio';
-  
+
   ngAfterViewInit(): void {
     if (typeof window !== 'undefined') {
       // Horizontales Scrollen mit Mausrad
@@ -41,35 +41,52 @@ export class AppComponent implements AfterViewInit {
 
       // Maus-Ziehen für horizontales Scrollen
       let isMouseDown = false;
-      let startX: number;
-      let scrollLeft: number;
+      let startX = 0; // Startposition der Maus
+      let scrollLeft = 0; // Ausgangspunkt des Scrollens
+      let velocity = 0; // Geschwindigkeit des Scrollens
+      const speedFactor = 1.0; // Geschwindigkeitsskalierung
+      const damping = 0.9; // Dämpfungsfaktor (0.9 = sanfte Trägheit)
 
       const onMouseDown = (e: MouseEvent) => {
         isMouseDown = true;
-        startX = e.pageX;
+        startX = e.pageX; // Mausposition merken
         scrollLeft = window.scrollX;
 
         document.body.style.cursor = 'grabbing';
-        document.body.style.userSelect = 'none'; // Verhindert Text-Markierung
+        document.body.style.userSelect = 'none';
+        velocity = 0; // Geschwindigkeit zurücksetzen
       };
 
       const onMouseMove = (e: MouseEvent) => {
-        const speedFactor = 1.0; // Faktor für die Zieh-Geschwindigkeit
         if (!isMouseDown) return;
-        const x = e.pageX; // Aktuelle Mausposition
-        const walk = (startX - x) * speedFactor; // Geschwindigkeit erhöhen/verringern
-        window.scrollTo({
-          left: scrollLeft + walk,
-          behavior: 'auto'
-        });
+
+        const distance = (e.pageX - startX) * speedFactor;
+        velocity = -distance; // Geschwindigkeit berechnen (negativ für Scrollrichtung)
       };
 
       const onMouseUp = () => {
         isMouseDown = false;
-
         document.body.style.cursor = 'default';
-        document.body.style.userSelect = ''; // Text-Markierung wieder aktivieren
+        document.body.style.userSelect = '';
       };
+
+      const smoothScroll = () => {
+        if (Math.abs(velocity) > 0.5) { // Nur scrollen, wenn die Geschwindigkeit signifikant ist
+          window.scrollBy({
+            left: velocity,
+            behavior: 'auto'
+          });
+
+          velocity *= damping; // Geschwindigkeit langsam dämpfen
+        } else {
+          velocity = 0; // Geschwindigkeit auf 0 setzen, wenn kaum Bewegung ist
+        }
+
+        requestAnimationFrame(smoothScroll); // Animation weiterführen
+      };
+
+      // Animation starten
+      smoothScroll();
 
       // Event Listener hinzufügen
       window.addEventListener('mousedown', onMouseDown);
@@ -79,6 +96,7 @@ export class AppComponent implements AfterViewInit {
     }
   }
 }
+
 
 
 
