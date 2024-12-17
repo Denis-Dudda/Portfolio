@@ -2,8 +2,11 @@
   <span>My Skill Set</span>
   <div>
     <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nulla sunt quae libero quod unde atque alias quo. Sint rem nihil velit id eos quia necessitatibus perspiciatis officiis ullam tenetur.</span>
-    <div *ngFor="let icon of icons" class="icon-item" class="skill-icon-grid">
-      <img [src]="icon.src" [alt]="icon.label">
+    <div class="grid-wrapper">
+      <div *ngFor="let icon of icons" class="icon-item">
+        <img [src]="icon.src" [alt]="icon.label">
+        <span>{{icon.property}}</span>
+      </div>
     </div>
   </div>
 </section>

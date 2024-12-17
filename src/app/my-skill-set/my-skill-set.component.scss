@@ -1,0 +1,28 @@
+@import '../../styles.scss';
+
+section{
+@include dFlex();
+width: 980px;
+height: 360px;
+}
+
+.skill-icon-grid{
+display: flex;
+flex-direction: column;
+
+ 
+
+}
+
+.grid-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 16px;
+  >div{
+    @include dFlex();
+    flex-direction: column;
+    gap: 8px;
+    color: white;
+  }
+}
