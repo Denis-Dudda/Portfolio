@@ -22,8 +22,7 @@ body{
   background-size: cover;
   font-family: 'Quantico';
   overflow-y: hidden;
-  overflow-x: scroll; /* Ermöglicht horizontales Scrollen */
-  overflow-y: hidden; /* Verhindert vertikales Scrollen */
+  overflow-x: hidden; 
 }
 
 .contant-wrapper{
