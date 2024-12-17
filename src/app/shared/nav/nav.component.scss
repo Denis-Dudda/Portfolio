@@ -6,7 +6,7 @@ section{
 nav{
   width: 172px;
   height: 100vh;
-  background-color: rgb(181,233,59);
+  background-color: var(--primary-color);
   @include dFlex($g:32px);
   writing-mode: vertical-rl;
   direction: rtl;

@@ -26,13 +26,13 @@ div{
   flex-direction: column;
   >h1{
     font-size: 68px;
-    color: rgb(181,233,59);
+    color:var(--primary-color);
   }
   > h2 {
     font-size: 48px;
     font-weight: bold;
     color: transparent; /* Der Text ist transparent */
-    -webkit-text-stroke: 1px rgb(181,233,59); /* Definiert einen dünnen Rand um den Text */
+    -webkit-text-stroke: 1px var(--primary-color); /* Definiert einen dünnen Rand um den Text */
     background: transparent; /* Verhindert, dass der Text Hintergrundfarbe annimmt */
     margin-block-start: -1.17em;
     margin-block-end: -7.17em;
