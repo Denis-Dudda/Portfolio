@@ -39,8 +39,14 @@ flex-direction: column;
     gap: 8px;
     color: white;
   }
+  >span{
+    color: white;
+    height: 60px;
+  }
 }
-
-.icon-item{
-  
+.arrow-right-container{
+  width: 100vw;
+  display: flex;
+  justify-content: end;
+  margin-right: 48px;
 }

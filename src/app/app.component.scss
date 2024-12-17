@@ -10,4 +10,11 @@ app-my-skill-set{
   @include dFlex();
   width: 100vw;
   height: 100vh;
+  flex-direction: column-reverse;
+  >div{
+    width: 100vw;
+    display: flex;
+    justify-content: end;
+    padding-right: 46px;
+  }
 }
