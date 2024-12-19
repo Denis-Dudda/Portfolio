@@ -7,6 +7,7 @@ import { SocialIconsComponent } from './shared/social-icons/social-icons.compone
 import { WhyMeComponent } from './why-me/why-me.component';
 import { MySkillSetComponent } from './my-skill-set/my-skill-set.component';
 import { MyWorkComponent } from './my-work/my-work.component';
+import { ReferencesComponent } from './references/references.component';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ import { MyWorkComponent } from './my-work/my-work.component';
     SocialIconsComponent,
     WhyMeComponent,
     MySkillSetComponent,
-    MyWorkComponent
+    MyWorkComponent,
+    ReferencesComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
