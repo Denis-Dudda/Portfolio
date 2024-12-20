@@ -38,6 +38,9 @@ flex-direction: column;
     flex-direction: column;
     gap: 8px;
     color: white;
+    img:hover{
+      box-shadow: 0 0 50px var(--primary-color);
+    }
   }
   >span{
     color: white;

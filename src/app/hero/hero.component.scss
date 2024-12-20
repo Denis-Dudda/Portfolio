@@ -12,7 +12,9 @@ section{
   >img{
     position: absolute;
     right: 20px;
-    
+    &:hover{
+      cursor: pointer;
+    }
   }
 }
 
