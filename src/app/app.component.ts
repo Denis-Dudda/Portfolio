@@ -8,6 +8,7 @@ import { WhyMeComponent } from './why-me/why-me.component';
 import { MySkillSetComponent } from './my-skill-set/my-skill-set.component';
 import { MyWorkComponent } from './my-work/my-work.component';
 import { ReferencesComponent } from './references/references.component';
+import { ContactMeComponent } from './contact-me/contact-me.component';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ import { ReferencesComponent } from './references/references.component';
     WhyMeComponent,
     MySkillSetComponent,
     MyWorkComponent,
-    ReferencesComponent
+    ReferencesComponent,
+    ContactMeComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
